@@ -1,0 +1,21 @@
+@startuml
+start
+:Pengguna mengakses sistem;
+if (Pilih Peran?) then (Administrator)
+    :Kelola Data Fakultas;
+    :Kelola Data Departemen;
+    :Kelola Data Dosen;
+    :Kelola Data Mahasiswa;
+    :Generate Laporan;
+elseif (Dosen)
+    :Lihat Informasi Departemen;
+    :Akses Dokumen;
+elseif (Mahasiswa)
+    :Lihat Informasi Fakultas;
+    :Lihat Informasi Departemen;
+    :Unduh Dokumen;
+else (Sistem Eksternal)
+    :Sinkronisasi Data;
+endif
+stop
+@enduml

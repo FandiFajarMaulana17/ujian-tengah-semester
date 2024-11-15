@@ -1,0 +1,40 @@
+@startuml
+!define RECTANGLE_STYLE rectangle
+left to right direction
+
+actor "Administrator" as Admin
+actor "Dosen" as Dosen
+actor "Mahasiswa" as Mahasiswa
+actor "Sistem Eksternal" as Sistem
+
+usecase "Kelola Data Fakultas" as UCFakultas
+usecase "Kelola Data Departemen" as UCDepartemen
+usecase "Kelola Data Dosen" as UCDosen
+usecase "Kelola Data Mahasiswa" as UCMahasiswa
+usecase "Generate Laporan" as UCLaporan
+
+usecase "Lihat Informasi Departemen" as UCViewDepartemen
+usecase "Akses Dokumen" as UCAksesDokumen
+
+usecase "Lihat Informasi Fakultas" as UCViewFakultas
+usecase "Lihat Informasi Departemen" as UCViewDep
+usecase "Unduh Dokumen" as UCUnduhDokumen
+
+usecase "Sinkronisasi Data" as UCSyncData
+
+Admin --> UCFakultas
+Admin --> UCDepartemen
+Admin --> UCDosen
+Admin --> UCMahasiswa
+Admin --> UCLaporan
+
+Dosen --> UCViewDepartemen
+Dosen --> UCAksesDokumen
+
+Mahasiswa --> UCViewFakultas
+Mahasiswa --> UCViewDep
+Mahasiswa --> UCUnduhDokumen
+
+Sistem --> UCSyncData
+
+@enduml
